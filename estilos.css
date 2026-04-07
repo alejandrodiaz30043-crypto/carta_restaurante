@@ -1,0 +1,170 @@
+/* 1. CONFIGURACIÓN GLOBAL Y RESET */
+@import url('https://fonts.googleapis.com/css2?family=Chewy&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 2. ESTILO BASE (ESCRITORIO / PANTALLAS GRANDES) */
+body {
+    font-family: 'Chewy', system-ui;
+    background-color: #000000;
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(255, 0, 0, 0.12) 0%, transparent 45%),
+        radial-gradient(circle at 90% 80%, rgba(255, 255, 0, 0.1) 0%, transparent 45%);
+    background-attachment: fixed;
+    color: #fff;
+}
+
+header {
+    text-align: center;
+    padding: 40px 0 20px 0;
+    background-color: #0a0a0a;
+    background-image: radial-gradient(circle at 50% 50%, rgba(255, 0, 0, 0.35) 0%, transparent 70%);
+}
+
+header img {
+    max-height: 140px;
+    width: auto;
+    filter: drop-shadow(0 0 15px rgba(255, 0, 0, 0.4));
+}
+
+/* NAVEGACIÓN STICKY */
+nav {
+    position: sticky;
+    top: 0;
+    background: rgba(15, 15, 15, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    border-bottom: 2px solid #ff4d4d;
+    padding: 10px 0;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    list-style: none;
+}
+
+nav a {
+    text-decoration: none;
+    color: #ffcc00;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+/* CONTENEDOR DE TARJETAS */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+/* SECCIONES NORMALES (2 POR FILA EN PC) */
+section {
+    background: rgba(25, 25, 25, 0.92);
+    padding: 15px;
+    border-radius: 18px;
+    border: 1px solid #3d3d3d;
+    flex: 1 1 calc(48% - 15px); 
+    min-width: 320px;
+    text-align: center;
+}
+
+section h2 { display: none; } /* Quitamos doble título */
+
+section img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+}
+
+/* SECCIÓN POSTRES (LADO A LADO EN PC) */
+#postres {
+    flex: 1 1 100%;
+    background: rgba(30, 30, 45, 0.95);
+    border: 2px dashed #b19cd9;
+    padding: 20px;
+    text-align: center;
+}
+
+#postres img {
+    display: inline-block;
+    width: 47%; 
+    margin: 1%;
+    max-height: 550px;
+    vertical-align: top;
+}
+
+/* 3. BOTÓN DE WHATSAPP (¡REINSTALADO!) */
+.btn-whatsapp {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: #25d366;
+    color: #fff;
+    padding: 15px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.btn-whatsapp:hover {
+    background-color: #128c7e;
+    transform: scale(1.1);
+}
+
+/* ------------------------------------------------------- */
+/* 4. MEDIA QUERIES (ADAPTABILIDAD) */
+
+@media (max-width: 1024px) {
+    section {
+        flex: 1 1 calc(48% - 10px);
+    }
+}
+
+@media (max-width: 768px) {
+    section {
+        flex: 1 1 100%;
+    }
+
+    #postres img {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    header img {
+        max-height: 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    nav a {
+        font-size: 0.9rem;
+    }
+    .btn-whatsapp {
+        padding: 12px 20px;
+        font-size: 1rem;
+        bottom: 15px;
+        right: 15px;
+    }
+}
