@@ -168,3 +168,43 @@ section img {
         right: 15px;
     }
 }
+/* CONTENEDOR */
+.mapa {
+    display: flex;
+    flex-direction: column; /* uno debajo del otro */
+    align-items: center;    /* centra TODO horizontalmente */
+    gap: 15px;              /* espacio entre imagen y botón */
+    margin-top: 20px;
+}
+
+/* IMAGEN PRINCIPAL */
+.img-ubicacion {
+    width: 300px;   /* ajusta según tu diseño */
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+/* BOTÓN */
+.btn-maps {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background-color: #8f64018b;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+/* HOVER */
+.btn-maps:hover {
+    background-color: #01e1e59a;
+}
+
+/* ICONO DEL BOTÓN */
+.btn-maps img {
+    width: 200px;
+    height: auto;
+}
